@@ -6,10 +6,19 @@ const getAllConversations = async () => {
   return users;
 };
 
+const getConversationById = async (id) => {
+  const data = await Conversations.findOne({
+    where: {
+      id,
+    },
+  });
+  return data;
+};
+
 //title,  imageUrl, userId
 
 const postConversation = async (data) => {
-  const response = await Pokemons.create({
+  const response = await Conversations.create({
     id: uuid.v4(),
     title: data.title,
     imageUrl: data.imageUrl,
@@ -18,7 +27,28 @@ const postConversation = async (data) => {
   return response;
 };
 
+const updateConversation = async (id, data) => {
+  const result = await Conversations.update(data, {
+    where: {
+      id,
+    },
+  });
+  return result;
+};
+
+const deleteConversation = async (id) => {
+  const result = await Conversations.update({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
+
 module.exports = {
   getAllConversations,
   postConversation,
+  getConversationById,
+  updateConversation,
+  deleteConversation,
 };
