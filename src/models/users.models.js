@@ -32,6 +32,7 @@ const Users = db.define('users', {
   },
   profileImagen:{
     type: DataTypes.TEXT,
+    field: 'profile_imagen'
   },
   phone:{
     type: DataTypes.STRING,
