@@ -38,7 +38,12 @@ const Users = db.define('users', {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true
-  }
+  },
+  status: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: 'active'
+  },
 })
 
 

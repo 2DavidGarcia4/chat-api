@@ -17,8 +17,8 @@ const loginUSer = async (email, password) => {
     }
     return false
   
-  } catch {
-      return false
+  } catch(error) {
+    return error
   }
 }
 
