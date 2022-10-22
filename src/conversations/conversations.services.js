@@ -1,8 +1,9 @@
 const conversationsControllers = require("./conversations.controller");
 
 const getAllConversations = (req, res) => {
+  const id = req.user.id
   conversationsControllers
-    .getAllConversations()
+    .getAllConversations(id)
     .then((data) => {
       res.status(200).json(data);
     })
@@ -10,9 +11,10 @@ const getAllConversations = (req, res) => {
 };
 
 const getConversationById = (req, res) => {
+  const userId = req.user.id
   const id = req.params.id;
   conversationsControllers
-    .getConversationById(id)
+    .getConversationById(userId, id)
     .then((data) => {
       res.status(200).json(data);
     })
@@ -22,7 +24,7 @@ const getConversationById = (req, res) => {
 const createConversation = (req, res) => {
   const userId = req.user.id;
   const { title, imageUrl } = req.body;
-  if (title && imageUrl) {
+  if (title) {
     conversationsControllers
       .postConversation({
         title,
