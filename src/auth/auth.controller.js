@@ -15,10 +15,16 @@ const loginUSer = async (email, password) => {
     if (verifyPassword) {
       return user;
     }
+<<<<<<< HEAD
     return false
   
   } catch(error) {
     return error
+=======
+    return false;
+  } catch (error) {
+    return error;
+>>>>>>> jose_omar_conversation
   }
 };
 

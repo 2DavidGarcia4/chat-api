@@ -1,7 +1,7 @@
 const conversationsControllers = require("./conversations.controller");
 
 const getAllConversations = (req, res) => {
-  const id = req.user.id
+  const id = req.user.id;
   conversationsControllers
     .getAllConversations(id)
     .then((data) => {
@@ -11,7 +11,7 @@ const getAllConversations = (req, res) => {
 };
 
 const getConversationById = (req, res) => {
-  const userId = req.user.id
+  const userId = req.user.id;
   const id = req.params.id;
   conversationsControllers
     .getConversationById(userId, id)
@@ -38,22 +38,25 @@ const createConversation = (req, res) => {
       message: "Missing Data",
       fields: {
         title: "string",
-        imgUrl: "string",
+        imageUrl: "string",
       },
     });
   }
 };
 
 const patchConversation = (req, res) => {
+  const userId = req.user.id;
   const id = req.params.id;
   const { title, imageUrl } = req.body;
   conversationsControllers
-    .updateConversation(id, { title, imageUrl })
+    .updateConversation(userId, id, { title, imageUrl })
     .then((data) => {
       if (data[0]) {
         res
           .status(200)
           .json({ message: `User with ID: ${id}, edited succesfully!` });
+      }else{
+        res.status(404).json({message: 'Invalid id'})
       }
     })
     .catch((err) => {
@@ -62,9 +65,10 @@ const patchConversation = (req, res) => {
 };
 
 const deleteConversation = (req, res) => {
+  const userId = req.user.id;
   const id = req.params.id;
   conversationsControllers
-    .deleteConversation(id)
+    .deleteConversation(userId, id)
     .then((data) => {
       if (data) {
         res.status(204).json();

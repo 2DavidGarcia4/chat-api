@@ -12,7 +12,7 @@ router
   .post(
     passport.authenticate("jwt", { session: false }),
     conversationsServices.createConversation
-  )
+  );
 
 //? /api/v1/conversations/:id
 router
