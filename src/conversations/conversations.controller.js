@@ -28,19 +28,21 @@ const postConversation = async (data) => {
   return response;
 };
 
-const updateConversation = async (id, data) => {
+const updateConversation = async (userId, id, data) => {
   const result = await Conversations.update(data, {
     where: {
-      id,
+      userId,
+      id
     },
   });
   return result;
 };
 
-const deleteConversation = async (id) => {
+const deleteConversation = async (userId, id) => {
   const result = await Conversations.destroy({
     where: {
-      id,
+      userId,
+      id
     },
   });
   return result;
