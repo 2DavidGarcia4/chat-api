@@ -1,8 +1,9 @@
 const conversationsControllers = require("./conversations.controller");
 
 const getAllConversations = (req, res) => {
+  const id = req.user.id;
   conversationsControllers
-    .getAllConversations()
+    .getAllConversations(id)
     .then((data) => {
       res.status(200).json(data);
     })
@@ -10,9 +11,10 @@ const getAllConversations = (req, res) => {
 };
 
 const getConversationById = (req, res) => {
+  const userId = req.user.id;
   const id = req.params.id;
   conversationsControllers
-    .getConversationById(id)
+    .getConversationById(userId, id)
     .then((data) => {
       res.status(200).json(data);
     })
@@ -36,7 +38,7 @@ const createConversation = (req, res) => {
       message: "Missing Data",
       fields: {
         title: "string",
-        imgUrl: "string",
+        imageUrl: "string",
       },
     });
   }
@@ -60,9 +62,10 @@ const patchConversation = (req, res) => {
 };
 
 const deleteConversation = (req, res) => {
+  const userId = req.user.id;
   const id = req.params.id;
   conversationsControllers
-    .deleteConversation(id)
+    .deleteConversation(userId, id)
     .then((data) => {
       if (data) {
         res.status(204).json();

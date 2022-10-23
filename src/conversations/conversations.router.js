@@ -5,14 +5,22 @@ require("../middlewares/auth.middleware")(passport);
 
 router
   .route("/")
-  .get(conversationsServices.getAllConversations)
-  .post(passport.authenticate("jwt", { session: false }));
-conversationsServices.createConversation;
+  .get(
+    passport.authenticate("jwt", { session: false }),
+    conversationsServices.getAllConversations
+  )
+  .post(
+    passport.authenticate("jwt", { session: false }),
+    conversationsServices.createConversation
+  );
 
 //? /api/v1/conversations/:id
 router
   .route("/:id")
-  .get(conversationsServices.getConversationById)
+  .get(
+    passport.authenticate("jwt", { session: false }),
+    conversationsServices.getConversationById
+  )
   .patch(
     passport.authenticate("jwt", { session: false }),
     conversationsServices.patchConversation
