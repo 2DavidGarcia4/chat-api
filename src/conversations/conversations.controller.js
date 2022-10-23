@@ -6,11 +6,6 @@ const getAllConversations = async (userId) => {
   return users;
 };
 
-// const getAllConversations = async () => {
-//   const users = await Conversations.findAll();
-//   return users;
-// };
-
 const getConversationById = async (userId, id) => {
   const data = await Conversations.findOne({
     where: {

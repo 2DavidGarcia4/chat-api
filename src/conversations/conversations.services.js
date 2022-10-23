@@ -24,7 +24,7 @@ const getConversationById = (req, res) => {
 const createConversation = (req, res) => {
   const userId = req.user.id;
   const { title, imageUrl } = req.body;
-  if (title && imageUrl) {
+  if (title) {
     conversationsControllers
       .postConversation({
         title,
