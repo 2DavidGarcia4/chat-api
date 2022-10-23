@@ -1,45 +1,49 @@
-const db = require('../utils/database');
+const db = require("../utils/database");
 
-const { DataTypes } = require('sequelize')
+const { DataTypes } = require("sequelize");
 
-const Users = db.define('users', {
+const Users = db.define("users", {
   id: {
     type: DataTypes.UUID,
     primaryKey: true,
-    allowNull: false
+    allowNull: false,
   },
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
-    field: 'first_name'
+    field: "first_name",
   },
-  lastName:{
+  lastName: {
     type: DataTypes.STRING,
     allowNull: false,
-    field: 'last_name'
+    field: "last_name",
   },
-  email:{
+  email: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
     validate: {
-      isEmail: true
-    }
+      isEmail: true,
+    },
   },
-  password:{
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  profileImagen:{
-    type: DataTypes.TEXT,
-    field: 'profile_imagen'
-  },
-  phone:{
+  password: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true
-  }
-})
+  },
+  profileImagen: {
+    type: DataTypes.TEXT,
+    field: "profile_imagen",
+  },
+  phone: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  status: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: "active",
+  },
+});
 
-
-module.exports = Users
+module.exports = Users;

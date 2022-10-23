@@ -2,7 +2,7 @@ const Conversations = require("../models/conversations.models");
 const uuid = require("uuid");
 
 const getAllConversations = async (userId) => {
-  const users = await Conversations.findAll({where: {userId}});
+  const users = await Conversations.findAll({ where: { userId } });
   return users;
 };
 
@@ -10,7 +10,7 @@ const getConversationById = async (userId, id) => {
   const data = await Conversations.findOne({
     where: {
       userId,
-      id
+      id,
     },
   });
   return data;

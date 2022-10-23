@@ -1,7 +1,7 @@
 const conversationsControllers = require("./conversations.controller");
 
 const getAllConversations = (req, res) => {
-  const id = req.user.id
+  const id = req.user.id;
   conversationsControllers
     .getAllConversations(id)
     .then((data) => {
@@ -11,7 +11,7 @@ const getAllConversations = (req, res) => {
 };
 
 const getConversationById = (req, res) => {
-  const userId = req.user.id
+  const userId = req.user.id;
   const id = req.params.id;
   conversationsControllers
     .getConversationById(userId, id)
@@ -38,7 +38,7 @@ const createConversation = (req, res) => {
       message: "Missing Data",
       fields: {
         title: "string",
-        imgUrl: "string",
+        imageUrl: "string",
       },
     });
   }
