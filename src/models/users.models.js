@@ -29,31 +29,13 @@ const Users = db.define("users", {
   password: {
     type: DataTypes.STRING,
     allowNull: false,
-<<<<<<< HEAD
     unique: true
-=======
-  },
-  profileImagen: {
-    type: DataTypes.TEXT,
-    field: "profile_imagen",
-  },
-  phone: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
->>>>>>> jose_omar_conversation
   },
   status: {
     type: DataTypes.STRING,
     allowNull: false,
-<<<<<<< HEAD
     defaultValue: 'active'
   },
 })
-=======
-    defaultValue: "active",
-  },
-});
->>>>>>> jose_omar_conversation
 
 module.exports = Users;

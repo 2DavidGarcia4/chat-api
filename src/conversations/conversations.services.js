@@ -71,7 +71,7 @@ const deleteConversation = (req, res) => {
     .deleteConversation(userId, id)
     .then((data) => {
       if (data) {
-        res.status(204).json();
+        res.status(204).json(data);
       } else {
         res.status(404).json({ message: "Invalid ID" });
       }
@@ -81,10 +81,35 @@ const deleteConversation = (req, res) => {
     });
 };
 
+const getParticipantById = async (req, res) => {
+  try {
+    const { id, participantId } = req.params
+    const data = await conversationsControllers.getParticipantById(id, participantId)
+    res.status(200).json(data)
+
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
+
+const deleteParticipant = async (rea, res) => {
+  try {
+    const { id, participantId } = req.params
+    const data = await conversationsControllers.deleteParticipant(id, participantId)
+    res.status(200).json(data)
+
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
+
 module.exports = {
   getAllConversations,
   createConversation,
   getConversationById,
   patchConversation,
   deleteConversation,
+
+  getParticipantById,
+  deleteParticipant
 };

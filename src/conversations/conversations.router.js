@@ -30,4 +30,20 @@ router
     conversationsServices.deleteConversation
   );
 
+router
+  .route('/:id/participants')
+  .get()
+  .post()
+
+router
+  .route('/:id/participants/:participantId')
+  .get(
+    passport.authenticate("jwt", { session: false }),
+    conversationsServices.getParticipantById
+  )
+  .post(
+    passport.authenticate("jwt", { session: false }),
+    conversationsServices.deleteParticipant
+  )
+
 module.exports = router;
