@@ -49,27 +49,10 @@ const deleteConversation = async (userId, id) => {
   return result;
 };
 
-const getParticipantById = (conversationId, participantId) => Participants.findOne({
-  where: {
-    conversationId, 
-    participantId
-  }
-})
-
-const deleteParticipant = (conversationId, participantId) => Participants.destroy({
-  where: {
-    conversationId,
-    participantId
-  }
-})
-
 module.exports = {
   getAllConversations,
   postConversation,
   getConversationById,
   updateConversation,
-  deleteConversation,
-
-  getParticipantById,
-  deleteParticipant
+  deleteConversation
 };

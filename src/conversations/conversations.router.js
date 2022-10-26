@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const passport = require("passport");
 const conversationsServices = require("./conversations.services");
+const participantsServices = require("../participants/participants.services")
 require("../middlewares/auth.middleware")(passport);
 
 router
@@ -32,18 +33,24 @@ router
 
 router
   .route('/:id/participants')
-  .get()
-  .post()
+  .get(
+    passport.authenticate("jwt", { session: false }),
+    participantsServices.getAllParticipants
+  )
+  .post(
+    passport.authenticate("jwt", { session: false }),
+    participantsServices.postParticipant
+  )
 
 router
   .route('/:id/participants/:participantId')
   .get(
     passport.authenticate("jwt", { session: false }),
-    conversationsServices.getParticipantById
+    participantsServices.getParticipantById
   )
-  .post(
+  .delete(
     passport.authenticate("jwt", { session: false }),
-    conversationsServices.deleteParticipant
+    participantsServices.deleteParticipant
   )
 
 module.exports = router;

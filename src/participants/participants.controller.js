@@ -1,4 +1,6 @@
 const Participants = require('../models/participants.models')
+const Users = require("../models/users.models")
+const Conversations = require("../models/conversations.models")
 const uuid = require("uuid");
 
 const getAllParticipants = async (conversationId) => {
@@ -11,7 +13,7 @@ const getAllParticipants = async (conversationId) => {
 }
 
 
-const createParticipants = async (conversationId, userId) => {
+const createParticipant = async (conversationId, userId) => {
   const data = await Participants.create({
     id: uuid.v4(),
     conversationId,
@@ -21,7 +23,43 @@ const createParticipants = async (conversationId, userId) => {
 }
 
 
+
+//? b
+const getParticipantById = (conversationId, id) => Participants.findOne({
+  where: {
+    conversationId, 
+    id
+  },
+  attributes: {
+    exclude: ['createdAt', 'updatedAt', 'conversationId', 'userId']
+  },
+  include: [
+    {
+      model: Users,
+      attributes: {
+        exclude: ['createdAt', 'updatedAt']
+      }
+    },
+    {
+      model: Conversations,
+      attributes: {
+        exclude: ['createdAt', 'updatedAt']
+      }
+    }
+  ]
+})
+
+const deleteParticipant = (conversationId, id) => Participants.destroy({
+  where: {
+    id
+  }
+})
+
+
 module.exports = {
   getAllParticipants,
-  createParticipants
+  createParticipant,
+
+  getParticipantById,
+  deleteParticipant
 }
