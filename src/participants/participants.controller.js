@@ -51,6 +51,7 @@ const getParticipantById = (conversationId, id) => Participants.findOne({
 
 const deleteParticipant = (conversationId, id) => Participants.destroy({
   where: {
+    conversationId,
     id
   }
 })
