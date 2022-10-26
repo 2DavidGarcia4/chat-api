@@ -11,7 +11,7 @@ const getAllParticipants = async (conversationId) => {
 }
 
 
-const postParticipants = async (conversationId, userId) => {
+const createParticipants = async (conversationId, userId) => {
   const data = await Participants.create({
     id: uuid.v4(),
     conversationId,
@@ -23,5 +23,5 @@ const postParticipants = async (conversationId, userId) => {
 
 module.exports = {
   getAllParticipants,
-  postParticipants
+  createParticipants
 }
