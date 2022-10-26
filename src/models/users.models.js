@@ -29,9 +29,8 @@ const Users = db.define("users", {
   password: {
     type: DataTypes.STRING,
     allowNull: false,
-<<<<<<< HEAD
     unique: true
-=======
+
   },
   profileImagen: {
     type: DataTypes.TEXT,
@@ -41,18 +40,13 @@ const Users = db.define("users", {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
->>>>>>> elvis
   },
   status: {
     type: DataTypes.STRING,
     allowNull: false,
     defaultValue: 'active'
   },
-<<<<<<< HEAD
 })
-=======
-});
 
->>>>>>> elvis
 
 module.exports = Users;
