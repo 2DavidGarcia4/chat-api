@@ -12,7 +12,7 @@
 ------------
 ## Instructivo
 
-1. Tablas y relaciones de BBDD del proyecto [diagrama]
+1. Tablas y relaciones de BBDD del proyecto [diagrama](https://dbdiagram.io/d/6139516e825b5b0146f9a927)
     1. Funcionamiento
         1. Un usuario tiene muchas conversaciones
         2. Un usuario es participante de muchas conversaciones
