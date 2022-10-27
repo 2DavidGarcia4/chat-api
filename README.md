@@ -1,4 +1,4 @@
-<p style="text-align:center;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxfj0MxCOQiRwy9YOQKh_xkRqRfCW9qcduOpmGDZyKkkV0xUD3N_rLrUB_FMJfwNJAAo&usqp=CAU" alt="" /></a></p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxfj0MxCOQiRwy9YOQKh_xkRqRfCW9qcduOpmGDZyKkkV0xUD3N_rLrUB_FMJfwNJAAo&usqp=CAU" alt="" />
 
 ### Project Chat API with NodeJS(Express)
 
