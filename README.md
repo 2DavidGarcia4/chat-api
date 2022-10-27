@@ -1,4 +1,4 @@
-<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLRZr_H4jnDZQvPiIDaAGqc7rWvITkMPmzgQ&usqp=CAU" alt="" /></a></p>
+<p style="text-align:center;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxfj0MxCOQiRwy9YOQKh_xkRqRfCW9qcduOpmGDZyKkkV0xUD3N_rLrUB_FMJfwNJAAo&usqp=CAU" alt="" /></a></p>
 
 ### Project Chat API with NodeJS(Express)
 
@@ -51,6 +51,7 @@
 
 # Developers:
 ------------
+
 | integrants | GitHub  | LinkedIn |
 | :------------ |:---------------:| -----:|
 | Angeles D'Stefano | GitHub | AD |
