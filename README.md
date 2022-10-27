@@ -1,4 +1,4 @@
-<p align="center"><img src="/src/img/images.png" alt="chat Logo" /></a></p>
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLRZr_H4jnDZQvPiIDaAGqc7rWvITkMPmzgQ&usqp=CAU" alt="" /></a></p>
 
 ### Project Chat API with NodeJS(Express)
 
