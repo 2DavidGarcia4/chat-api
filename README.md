@@ -56,7 +56,7 @@
 | :------------ |:---------------:| -----:|
 | Angeles D'Stefano | GitHub | [AD]() |
 | Carlos Prado | [crafzito111](https://github.com/crafzito111) | [CP](https://www.linkedin.com/in/carlosluisprado/) |
-| David Garcia | [2DavidGarcia4](https://github.com/2DavidGarcia4) | [DG]() |
+| David Garcia | [2DavidGarcia4](https://github.com/2DavidGarcia4) | [DG](https://www.linkedin.com/in/david-garcia-607a40240/) |
 | Elvis Espinoza | [3lvis-dev](https://github.com/3lvis-dev) | [EE](https://www.linkedin.com/in/elvis-alexander-espinoza-) |
 | Omar Sosa | GitHub | [OS]() |
 | José Gavilanes | [joseandresgavilanes](https://github.com/joseandresgavilanes) | [JG]() |
