@@ -1,4 +1,4 @@
-<p align="center"><img src="/img/chat.png" alt="chat Logo" /></a></p>
+<p align="center"><img src="/src/img/images.png" alt="chat Logo" /></a></p>
 
 ### Project Chat API with NodeJS(Express)
 
