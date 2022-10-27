@@ -1,4 +1,4 @@
-# :fa-comment: :fa-user:
+<p align="center"><img src="/img/chat.png" alt="chat Logo" /></a></p>
 
 ### Project Chat API with NodeJS(Express)
 
@@ -51,7 +51,7 @@
 
 # Developers:
 ------------
-| :fa-user: integrants | :fa-github: GitHub  | :fa-linkedin-square: LinkedIn |
+| integrants | GitHub  | LinkedIn |
 | :------------ |:---------------:| -----:|
 | Angeles D'Stefano | GitHub | AD |
 | Carlos Prado | GitHub | CP |
@@ -62,4 +62,4 @@
 
 ------------
 
-###End
+### End
