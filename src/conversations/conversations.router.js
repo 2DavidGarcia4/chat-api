@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const passport = require("passport");
 const conversationsServices = require("./conversations.services");
+const messagesServices = require("../messages/messages.services")
 const participantsServices = require("../participants/participants.services")
 require("../middlewares/auth.middleware")(passport);
 
@@ -31,6 +32,32 @@ router
     conversationsServices.deleteConversation
   );
 
+
+//? c y d
+router
+  .route('/:id/messages')
+  .get(
+    passport.authenticate("jwt", { session: false }),
+    messagesServices.getMsgByConversationId
+  )
+  .post(
+    passport.authenticate("jwt", { session: false }),
+    messagesServices.createMessage
+  )
+
+router
+  .route('/:id/messages/:messageId')
+  .get(
+    passport.authenticate("jwt", { session: false }),
+    messagesServices.getMsgByMessageId
+  )
+  .delete(
+    passport.authenticate("jwt", { session: false }),
+    messagesServices.deleteMsgByMessageId
+  )
+
+
+//? Optionals a y b
 router
   .route('/:id/participants')
   .get(

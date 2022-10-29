@@ -1,5 +1,5 @@
 const Users = require('./users.models')
-const Messages = require("./message.models")
+const Messages = require("./messages.models")
 const Participants = require("./participants.models")
 const Conversations = require('./conversations.models')
 

@@ -8,10 +8,13 @@ const getMsgByConversationId = async (conversationId) => {
         where: {
             conversationId
         },
-        order:[['userId', 'ASC'],['createAt', 'DESC']],
+        order:[
+            ['userId', 'ASC'],
+            ['createdAt', 'DESC']
+        ],
         attributes: {
             exclude: ['createdAt', 'updatedAt']
-         },
+        },
         include: [
             {
                 model: Conversations,
@@ -23,33 +26,35 @@ const getMsgByConversationId = async (conversationId) => {
 }
 
 const createMessage = async (data) => {
+    console.log(data)
     const response = await Messages.create({
         id: uuid.v4(),
         message: data.message,
-        userId:data.userId, //? este es el user id que viene desde el token
+        userId: data.userId, //? este es el user id que viene desde el token
         conversationId: data.conversationId
     })
     return response
 }
 
-const getMsgByMessageId = async(id,conversationId) => {
+const getMsgByMessageId = async(id, conversationId) => {
     const data = await Messages.findOne({
         where: {
             id,
             conversationId
         },
+        
         include: [
             {
                 model: Conversations,
                 attributes: ['title']
             }
-        ]        
+        ],        
         
     })
     return data
 }
 
-const deleteMsgByMessageId = async (id,conversationId) => {
+const deleteMsgByMessageId = async (id, conversationId) => {
     const data = await Messages.destroy({
         where: {
             id,
@@ -58,6 +63,7 @@ const deleteMsgByMessageId = async (id,conversationId) => {
     })
     return data
 }
+
 module.exports = {
     // 3.c
     createMessage,
