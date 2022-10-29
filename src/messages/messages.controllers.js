@@ -1,7 +1,6 @@
 const Conversations = require('../models/conversations.models')
 const Messages = require('../models/messages.models')
 const uuid = require('uuid')
-const Users = require('../models/users.models') 
 
 const getMsgByConversationId = async (conversationId) => {
     const data = await Messages.findAll({
@@ -63,7 +62,6 @@ const deleteMsgByMessageId = async (id, conversationId) => {
     })
     return data
 }
-
 module.exports = {
     // 3.c
     createMessage,

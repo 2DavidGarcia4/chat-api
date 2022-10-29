@@ -1,9 +1,30 @@
 const Conversations = require("../models/conversations.models");
 const Participants = require("../models/participants.models")
 const uuid = require("uuid");
+const Users = require("../models/users.models");
+const Messages = require("../models/messages.models");
 
 const getAllConversations = async (userId) => {
-  const users = await Conversations.findAll({ where: { userId } });
+  const users = await Conversations.findAll({ 
+    where: { userId },
+    attributes: {
+      exclude: ['userId', 'createdAt', 'updatedAt']
+    },
+    include: [
+      {
+        model: Users,
+        attributes: {
+          exclude: ['status', 'createdAt', 'updatedAt']
+        }
+      },
+      {
+        model: Messages,
+        attributes: {
+          exclude: ['conversationId', 'createdAt', 'updatedAt']
+        }
+      }
+    ]
+  });
   return users;
 };
 
@@ -13,6 +34,23 @@ const getConversationById = async (userId, id) => {
       userId,
       id,
     },
+    attributes: {
+      exclude: ['userId', 'createdAt', 'updatedAt']
+    },
+    include: [
+      {
+        model: Users,
+        attributes: {
+          exclude: ['status', 'createdAt', 'updatedAt']
+        }
+      },
+      {
+        model: Messages,
+        attributes: {
+          exclude: ['conversationId', 'createdAt', 'updatedAt']
+        }
+      }
+    ]
   });
   return data;
 };
