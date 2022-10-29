@@ -15,7 +15,12 @@ const getAllConversations = async (userId) => {
         model: Users,
         attributes: {
           exclude: ['status', 'createdAt', 'updatedAt']
-        }
+        },
+        include: [
+          {
+            model: Messages
+          }
+        ]
       },
       {
         model: Messages,

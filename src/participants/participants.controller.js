@@ -7,6 +7,9 @@ const getAllParticipants = async (conversationId) => {
   const data = await Participants.findAll({
     where: {
       conversationId
+    },
+    attributes: {
+      exclude: ['createdAt', 'updatedAt']
     }
   })
   return data
